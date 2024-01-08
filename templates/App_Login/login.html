@@ -6,10 +6,11 @@
 <h2>Login:</h2>
 
 <form method="POST">
-    {{form|crispy}}
+    {{ form|crispy }}
     {% csrf_token %}
-    <submit type="submit" class='btn btn-success btn-sm'>Login</submit>
+    <button type="submit" class="btn btn-success btn-sm">Login</button>
 </form>
 
 <p>Doesn't have an account? <a href='{% url 'App_Login:signup' %}'>Create New Account</a></p>
 {% endblock %}
+

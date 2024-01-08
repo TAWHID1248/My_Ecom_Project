@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 #forms
 
-class ProfileForms(ModelForm):
+class ProfileForm(ModelForm):
     class Meta:
         model = Profile
         exclude = ('user',)
