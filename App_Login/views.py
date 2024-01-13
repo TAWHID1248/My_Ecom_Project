@@ -52,6 +52,7 @@ def user_profile(request):
         form = ProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
+            messages.success(request, "Changed saved")
             form = ProfileForm(instance=profile)
     return render(request, 'App_Login/change_profile.html', context={'form': form})
 
@@ -59,5 +60,5 @@ def user_profile(request):
 @login_required
 def logout_user(request):
     logout(request)
-    messages.warning(request, 'You are logged out')  
+    messages.warning(request, 'You are logged out!!')  
     return HttpResponse("Logged Out")
